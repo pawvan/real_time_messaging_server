@@ -12,6 +12,7 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
+
 module.exports ={
     dbUri:process.env.DB_URI | 'mongodb://localhost:27017/realtime-chat',
 jwtSecret:process.env.JWT_SECRET || 'your_jwt_secret',

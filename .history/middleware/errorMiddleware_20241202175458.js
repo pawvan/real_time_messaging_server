@@ -1,5 +1,7 @@
 /*!
  * This code is belongs to Pawvan
+ * 
+ * 
  * Rules:
  * 1. You can use, modify, and distribute this code freely for non-commercial purposes.
  * 2. Attribution must be provided in any derived works.
@@ -12,13 +14,10 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-module.exports ={
-    dbUri:process.env.DB_URI | 'mongodb://localhost:27017/realtime-chat',
-jwtSecret:process.env.JWT_SECRET || 'your_jwt_secret',
-socketOptions:{
-    cors:{
-        origin:"*",
-        methods:["GET","POST"]
-    }
+const errorHandler = (err,req,res,next)=>{
+    console.error(error);
+    res.status(400).json({
+        message:"something went wrong",error:err.message
+    })
 }
-};
+module.exports={erroHandler}
