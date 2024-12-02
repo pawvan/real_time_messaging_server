@@ -1,0 +1,32 @@
+/*!
+ * This code is belongs to Pawvan
+ * 
+ * 
+ * Rules:
+ * 1. You can use, modify, and distribute this code freely for non-commercial purposes.
+ * 2. Attribution must be provided in any derived works.
+ * 3. You may not use this code in any project that violates any laws.
+ * 4. No warranty is provided. Use this code at your own risk.
+ * 5. If you make any changes, you must document them.
+ * 6. Commercial use requires explicit permission from the author.
+ * 7. Redistribution of the code must include authors notice.
+ * 8. You cannot sublicense or sell this code.
+ * 9. You may not use this code in any harmful or malicious way.
+ *10. For more details, please contact: [pawanpediredla@gmail.com]
+ */
+const express = require("express")
+const http = require("http")
+const socketIo= require('socket.io')
+const mongoose = require('mongoose')
+const authRoutes = require('./routes/authRoutes')
+const messageRoutes =require('./routes/messageRoutes')
+const userRoutes = require('./routes/userRoutes');
+const {authenticateJWT} = require('./middleware/authMiddleware')
+const {errorHandler} =require('./middleware/errorMiddleware')
+const socketEvents = require('./socket/socketEvents')
+const config = require('./config/config')
+const logger = require('./utils/logger')
+const app =express()
+const server= http.createServer(app)
+const io = socketIo(server)
+mongoose.connect(config.dbUri,{useNewUrLParser:true,useUnified})
