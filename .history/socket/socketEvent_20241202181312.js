@@ -45,5 +45,5 @@ socket.emit('messageHistory',messages)
     })
 }
 socket.on('disconnect',()=>{
-    console.log('user disconnected')
+    console.log('user ')
 })

@@ -1,5 +1,7 @@
 /*!
- * This code is belongs to Pawvan 
+ * This code is belongs to Pawvan
+ * 
+ * 
  * Rules:
  * 1. You can use, modify, and distribute this code freely for non-commercial purposes.
  * 2. Attribution must be provided in any derived works.
@@ -31,19 +33,7 @@ console.error('message sending failed: ',err);
             socket.emit('messageHistory',messages);
         }
         catch(error){
-console.error('failed to fetch messages :',err);
-        }
-    });
-    socket.on('getMessages',async()=>{
-        try{
-const messages = await getMessages()
-socket.emit('messageHistory',messages)
-        }
-        catch(error){
-            console.error('failed to fetch messages',err);
+console.error('failed to fetch messages :')
         }
     })
 }
-socket.on('disconnect',()=>{
-    console.log('user disconnected')
-})

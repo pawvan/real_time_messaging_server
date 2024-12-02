@@ -36,14 +36,7 @@ console.error('failed to fetch messages :',err);
     });
     socket.on('getMessages',async()=>{
         try{
-const messages = await getMessages()
-socket.emit('messageHistory',messages)
-        }
-        catch(error){
-            console.error('failed to fetch messages',err);
+
         }
     })
 }
-socket.on('disconnect',()=>{
-    console.log('user disconnected')
-})
