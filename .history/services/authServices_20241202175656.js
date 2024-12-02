@@ -14,10 +14,3 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-const errorHandler = (err,req,res,next)=>{
-    console.error(err.stack);
-    res.status(400).json({
-        message:"something went wrong",error:err.message
-    })
-}
-module.exports={errorHandler}

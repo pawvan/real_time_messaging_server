@@ -15,7 +15,7 @@
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
 const errorHandler = (err,req,res,next)=>{
-    console.error(err.stack);
+    console.error(error.sta);
     res.status(400).json({
         message:"something went wrong",error:err.message
     })

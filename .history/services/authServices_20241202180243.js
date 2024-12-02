@@ -14,10 +14,24 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-const errorHandler = (err,req,res,next)=>{
-    console.error(err.stack);
-    res.status(400).json({
-        message:"something went wrong",error:err.message
+const jwt =require('jsonwebtoken')
+const User = require('../models/User');
+const bcrypt = require('bcryptjs')
+const config = require('../config/config')
+const registerUser = async (username,email,password)=>{
+ const salt = await bcrypt.genSalt(10);
+ const hashedPassword = await bcrypt.hash(password,salt);;   
+const newUser = new User({
+    username,email,password:hashedPassword
+})
+await newUser.save();
+return newUser;
+}
+const authenticateUser =async (email,password)=>{
+    const user = await User.findOne({email});
+    if(!user) throw new Error("user not found")
+        const isMatch = await bcrypt.compare(password,user.password)
+    const token =jwt.sign({
+        userIdLuser
     })
 }
-module.exports={errorHandler}
