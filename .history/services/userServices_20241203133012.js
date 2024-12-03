@@ -13,17 +13,3 @@
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
 const User = require('../models/userModel')
-const getUserById = async(userId)=>{
-const user = await User.findById(userId)
-if(!user) throw new Error('user not found')
-return user
-}
-const updateUser= async(userId,updateData)=>{
-    const user = await new User(
-        userId,updateData,{new:true})
-if(!user) throw new Error('user not found')
-return user;
-}
-module.exports={
-    getUserById,updateUser
-}

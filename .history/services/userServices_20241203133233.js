@@ -21,9 +21,7 @@ return user
 const updateUser= async(userId,updateData)=>{
     const user = await new User(
         userId,updateData,{new:true})
-if(!user) throw new Error('user not found')
-return user;
 }
 module.exports={
-    getUserById,updateUser
+    getUserById
 }

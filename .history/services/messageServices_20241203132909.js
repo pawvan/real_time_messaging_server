@@ -12,18 +12,29 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-const User = require('../models/userModel')
-const getUserById = async(userId)=>{
-const user = await User.findById(userId)
-if(!user) throw new Error('user not found')
-return user
+const Message = require('../models/messageModel')
+const getMessages=async()=>{
+    try{
+const messages = await Message.find()
+return messages
+    }
+    catch(error){
+        throw new Error('error retrieving messages')
+    }
 }
-const updateUser= async(userId,updateData)=>{
-    const user = await new User(
-        userId,updateData,{new:true})
-if(!user) throw new Error('user not found')
-return user;
+const createMessage =async (text,userId)=>{
+    try{
+const message = new Message({
+    text,userId
+})
+await message.save();
+return message
+    }
+    catch(error){
+throw new Error('error in saving a message');
+    }
 }
 module.exports={
-    getUserById,updateUser
+    getMessages,
+    createMessage
 }
