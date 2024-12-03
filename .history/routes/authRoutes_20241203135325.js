@@ -14,9 +14,5 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-const express = require('express')
-const router = express.Router()
-const {register,login}=require('../controllers/authController')
-router.post('/register',register)
-router.post('/login',login)
-module.exports={router}
+const express = require('express'
+)
