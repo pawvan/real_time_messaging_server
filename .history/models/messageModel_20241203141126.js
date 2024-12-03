@@ -32,4 +32,4 @@ const messageModel= new mongoose.Schema({
 
 })
 const Message=messageModel.model('Message',messageModel)
-module.exports =Message
+module.ex

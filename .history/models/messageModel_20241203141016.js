@@ -14,7 +14,7 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-const mongoose = require('mongoose')
+const mongoose = require(mongoose')
 const messageModel= new mongoose.Schema({
     text: {
         type: String,
@@ -31,5 +31,4 @@ const messageModel= new mongoose.Schema({
       }
 
 })
-const Message=messageModel.model('Message',messageModel)
-module.exports =Message
+module.exports=messageModel.model('Message',messageModel)
