@@ -16,6 +16,7 @@
  */
 
 const { getUserById, updateUser } = require("../services/userServices")
+
 const getProfile= async(req,res)=>{
 try{
 const userId = await getUserById(userId);
@@ -29,13 +30,9 @@ const updateProfile = async(req,res)=>{
 try{
     const userId =req.userId;
     const updateData = req.body;
-    const updateUser = await updateUser(userId,updateData);
-    res.status(200).json(updateUser)
+    const updateUser = await updateUser(userId,)
 }
 catch(error){
-res.status(500).json({
-    message:error.message
-})}}
-module.exports ={
-    getProfile,updateProfile
+
+}
 }

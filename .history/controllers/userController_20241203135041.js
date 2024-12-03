@@ -15,27 +15,17 @@
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
 
-const { getUserById, updateUser } = require("../services/userServices")
+const { getUserById } = require("../services/userServices")
+
 const getProfile= async(req,res)=>{
 try{
 const userId = await getUserById(userId);
-res.status(200).json(user)
+res.status(200).json
 }
 catch(error){
     res.status(500).json({message:"error.message"})
 }
 }
 const updateProfile = async(req,res)=>{
-try{
-    const userId =req.userId;
-    const updateData = req.body;
-    const updateUser = await updateUser(userId,updateData);
-    res.status(200).json(updateUser)
-}
-catch(error){
-res.status(500).json({
-    message:error.message
-})}}
-module.exports ={
-    getProfile,updateProfile
+
 }

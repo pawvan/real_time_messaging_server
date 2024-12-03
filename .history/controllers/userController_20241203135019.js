@@ -14,28 +14,14 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-
-const { getUserById, updateUser } = require("../services/userServices")
 const getProfile= async(req,res)=>{
 try{
-const userId = await getUserById(userId);
-res.status(200).json(user)
+const 
 }
 catch(error){
     res.status(500).json({message:"error.message"})
 }
 }
 const updateProfile = async(req,res)=>{
-try{
-    const userId =req.userId;
-    const updateData = req.body;
-    const updateUser = await updateUser(userId,updateData);
-    res.status(200).json(updateUser)
-}
-catch(error){
-res.status(500).json({
-    message:error.message
-})}}
-module.exports ={
-    getProfile,updateProfile
+
 }
