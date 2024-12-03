@@ -38,4 +38,4 @@ res.status((200)).json({token});
         res.status(400).json({message:error.message})
     }
 }
-module.exports={register,login}
+module.exports={reqgiste,login}

@@ -14,28 +14,18 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-const {registerUser,authenticateUser} = require('../services/authServices')
-const register = async(req,res)=>{
+const {createMessage,getMessages} =require('../services/messageServices')
+const sendMessage=async(req,res)=>{
     try{
-        const {username,email,password}=req.body
-        const newUser = await registerUser(username,email,password);
-        res.status(201).json(newUser)
-    }
-    catch(error){
-        res.status(500).json({message:error.message})
-
-    }
-}
-const login= async(req,res)=>{
-    try{
-const {email,password}= req.body;
-
-const token = await authenticateUser(email,password)
-res.status((200)).json({token});
+        const {
+            text,userId
+        }= req.body;
+        
 
     }
     catch(error){
-        res.status(400).json({message:error.message})
+        res.status(500).json({
+            message:error.message
+        })
     }
 }
-module.exports={register,login}

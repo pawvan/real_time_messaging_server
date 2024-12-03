@@ -17,25 +17,9 @@
 const {registerUser,authenticateUser} = require('../services/authServices')
 const register = async(req,res)=>{
     try{
-        const {username,email,password}=req.body
-        const newUser = await registerUser(username,email,password);
-        res.status(201).json(newUser)
+        const {username,email,password}=
     }
     catch(error){
-        res.status(500).json({message:error.message})
 
     }
 }
-const login= async(req,res)=>{
-    try{
-const {email,password}= req.body;
-
-const token = await authenticateUser(email,password)
-res.status((200)).json({token});
-
-    }
-    catch(error){
-        res.status(400).json({message:error.message})
-    }
-}
-module.exports={register,login}

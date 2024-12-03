@@ -28,14 +28,9 @@ const register = async(req,res)=>{
 }
 const login= async(req,res)=>{
     try{
-const {email,password}= req.body;
-
-const token = await authenticateUser(email,password)
-res.status((200)).json({token});
 
     }
     catch(error){
-        res.status(400).json({message:error.message})
+        res.status(400).json()
     }
 }
-module.exports={register,login}
