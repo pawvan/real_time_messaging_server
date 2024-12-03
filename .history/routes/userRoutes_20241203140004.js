@@ -21,5 +21,5 @@ const {
 }=require('../controllers/userController')
 const {authenticatJwt}=require('../middleware/errorMiddleware')
 router.post('/profile',getProfile)
-router.post('/profile',updateProfile)
+router.post('/',upda)
 module.exports = router

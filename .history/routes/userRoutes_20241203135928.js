@@ -19,7 +19,6 @@ const router = express.Router()
 const {
     getProfile,updateProfile
 }=require('../controllers/userController')
-const {authenticatJwt}=require('../middleware/errorMiddleware')
-router.post('/profile',getProfile)
-router.post('/profile',updateProfile)
+const {authenticatJwt}=require('../')
+router.post('/profile',)
 module.exports = router
