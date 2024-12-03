@@ -14,13 +14,22 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-const express = require('express')
-const router = express.Router()
-const {
-    getProfile,updateProfile
-}=require('../controllers/userController')
-const {authenticateJwt}=require('../middleware/errorMiddleware')
-router.post('/profile',getProfile)
-router.post('/profile',updateProfile)
-module.exports = router
-
+const mongoose = require("mongoose")
+const userSchema= new mongoose.Schema({
+    username:{
+        type:string,
+        required:true,
+        unique:true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        match: [/.+@.+\..+/, 'Please enter a valid email address']
+      },
+      password: {
+        type: String,
+        required: true
+      }
+})
+module.exports=mongoose.model('User',userSchema)

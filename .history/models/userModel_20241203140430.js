@@ -14,13 +14,22 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-const express = require('express')
-const router = express.Router()
-const {
-    getProfile,updateProfile
-}=require('../controllers/userController')
-const {authenticateJwt}=require('../middleware/errorMiddleware')
-router.post('/profile',getProfile)
-router.post('/profile',updateProfile)
-module.exports = router
-
+congoose")
+cose.Schema({
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ , 'Please enter a valid email address']
+ 
+ 
+ 
+ 
+ 
+}
+mel('User',userSchema)

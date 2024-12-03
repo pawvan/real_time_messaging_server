@@ -15,7 +15,7 @@
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
 const jwt =require('jsonwebtoken')
-const User = require('../models/userModel');
+const User = require('../models/user');
 const bcrypt = require('bcryptjs')
 const config = require('../config/config')
 const registerUser = async (username,email,password)=>{
