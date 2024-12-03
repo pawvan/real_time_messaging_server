@@ -18,7 +18,7 @@ const express = require('express')
 const {sendMessage,fetchMessages}=require('../controllers/messageController')
 const router = express.Router()
 router.post('/send',sendMessage)
-router.post('/fetch',fetchMessages)
+router.post('/fetch')
 module.exports={
     router
 }

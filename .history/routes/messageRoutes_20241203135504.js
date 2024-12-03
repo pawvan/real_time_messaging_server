@@ -14,11 +14,4 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-const express = require('express')
-const {sendMessage,fetchMessages}=require('../controllers/messageController')
-const router = express.Router()
-router.post('/send',sendMessage)
-router.post('/fetch',fetchMessages)
-module.exports={
-    router
-}
+const expr
