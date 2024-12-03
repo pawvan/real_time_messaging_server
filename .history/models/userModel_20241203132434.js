@@ -1,5 +1,7 @@
 /*!
  * This code is belongs to Pawvan
+ * 
+ * 
  * Rules:
  * 1. You can use, modify, and distribute this code freely for non-commercial purposes.
  * 2. Attribution must be provided in any derived works.
@@ -12,29 +14,21 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-const Message = require('../models/messagModel')
-const getMessages=async()=>{
-    try{
-const messages = await Message.find()
-return messages
-    }
-    catch(error){
-        throw new Error('error retrieving messages')
-    }
-}
-const createMessage =async (text,userId)=>{
-    try{
-const newMessage = new Message({
-    text,userId
+const mongoose = require("mongoose")
+const userSchema= new mongooseSchema({
+    username:{
+        type:string,
+        required:true,
+        unique:true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        match: [/.+@.+\..+/, 'Please enter a valid email address']
+      },
+      password: {
+        type: String,
+        required: true
+      }
 })
-await newMessage.save();
-return newMessage
-    }
-    catch(error){
-throw new Error('error in saving a message');
-    }
-}
-module.exports={
-    getMessages,
-    createMessage
-}

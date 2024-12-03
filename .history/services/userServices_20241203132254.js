@@ -12,29 +12,4 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-const Message = require('../models/messagModel')
-const getMessages=async()=>{
-    try{
-const messages = await Message.find()
-return messages
-    }
-    catch(error){
-        throw new Error('error retrieving messages')
-    }
-}
-const createMessage =async (text,userId)=>{
-    try{
-const newMessage = new Message({
-    text,userId
-})
-await newMessage.save();
-return newMessage
-    }
-    catch(error){
-throw new Error('error in saving a message');
-    }
-}
-module.exports={
-    getMessages,
-    createMessage
-}
+const User = require('../models/userModel')

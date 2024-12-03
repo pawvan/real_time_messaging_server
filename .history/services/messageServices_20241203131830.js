@@ -12,7 +12,7 @@
  * 9. You may not use this code in any harmful or malicious way.
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
-const Message = require('../models/messagModel')
+const Message = require('../models/Message')
 const getMessages=async()=>{
     try{
 const messages = await Message.find()
