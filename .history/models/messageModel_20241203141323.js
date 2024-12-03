@@ -15,7 +15,7 @@
  *10. For more details, please contact: [pawanpediredla@gmail.com]
  */
 const mongoose = require('mongoose')
-const messageSchema= new mongoose.Schema({
+const messageSchemsa= new mongoose.Schema({
     text: {
         type: String,
         required: true
@@ -31,5 +31,5 @@ const messageSchema= new mongoose.Schema({
       }
 
 })
-const Message=mongoose.model('Message',messageSchema)
+const Message=messageModel.model('Message',messageModel)
 module.exports =Message
